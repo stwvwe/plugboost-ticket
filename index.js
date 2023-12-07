@@ -1,7 +1,4 @@
-/*
-      if you need any type of help join our discord 
-               discord.gg/uoaio
-*/
+
 
 //======== Packages ========
 require('dotenv').config()
