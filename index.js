@@ -14,7 +14,6 @@ const {
 } = require(`quick.db`);
 const config = require(`${process.cwd()}/storage/config.js`);
 const clc = require("cli-color");
-const botToken = 'MTE0NTI3MTkyMzQ1MDgzOTEzMA.GVPnno.G5utoz_NS2Y0mbWS3pA7YO-Q_7fjDu-Z3j9Auc';
 const fs = require('fs');
 const db = new QuickDB({ 
   driver: new JSONDriver() 
@@ -69,13 +68,13 @@ try {
 } catch { /* */ }
 
 //======== Consol ========
-if (botToken) {
-    client.login(botToken).catch(e => {
-        console.log(clc.red("The Bot Token You Entered Into Your Project Is Incorrect Or Your Bot's INTENTS Are OFF!\n" + e));
-    });
-} else {
-    console.log(clc.red("Please Write Your Bot Token in the 'botToken' variable in your code!"));
-}
+if(client.token){
+    client.login(client.token).catch(e => {
+     console.log(clc.red("The Bot Token You Entered Into Your Project Is Incorrect Or Your Bot's INTENTS Are OFF!\n" + e))
+   })
+  } else {
+   console.log(clc.red("Please Write Your Bot Token Opposite The Token In The config.js File In Your Project!"))   
+  }
 
 //========== Replit Alive
 setInterval(() => {
